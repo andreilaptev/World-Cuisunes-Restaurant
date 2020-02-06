@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Admin Page";
+}
+
+
+<div> <h2> ADMIN PAGE </h2></div>
+
+<hr />
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h4> MANAGE USERS </h4>
+        <a class="btn btn-default" href="~/Users/Index">MANAGE USERS &raquo;</a>
+    </div>
+</div>
+<hr />
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h4> VIEW ALL MEMBERS </h4>
+        @using (Html.BeginForm("GetAllMembers", "Manager", FormMethod.Post))
+        {
+            <input type="hidden" name="redirectFrom" value="AdminPage" />
+            <p> <button class="btn btn-default"> GET ALL USERS </button> </p>
+        }
+
+
+
+    </div>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <h4>MANAGE DISCOUNTS</h4>
+        <form>
+            
+            <a class="btn btn-default" href="~/Discounts/Index">DISCOUNTS &raquo;</a>
+        </form>
+    </div>
+
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <h4>MANAGE PROMOTIONS</h4>
+
+        <a class="btn btn-default" href="~/Promotions/Index">PROMOTIONS &raquo;</a>
+    </div>
+
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <h4>MANAGE RESTAURANTS</h4>
+
+        <a class="btn btn-default" href="~/Restaurants/Index">REATAURANTS &raquo;</a>
+    </div>
+
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <h4>MANAGE TABLES</h4>
+
+        <a class="btn btn-default" href="~/Tables/Index">TABLES &raquo;</a>
+    </div>
+</div>
+
+<hr />
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h4>MANAGE DISHES </h4>
+
+        <a class="btn btn-default" href="~/Dishes/Index">DISHES &raquo;</a>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-12">
+        <h4>MANAGE INGREDIENTS</h4>
+
+        <a class="btn btn-default" href="~/Ingredients/Index">INGREDIENTS &raquo;</a>
+    </div>
+</div>
+
+    <input type="hidden" name="redirectFrom" value="AdminPage"/>
+
+
+
+<hr />
+
+
+
+
+
+
+
+

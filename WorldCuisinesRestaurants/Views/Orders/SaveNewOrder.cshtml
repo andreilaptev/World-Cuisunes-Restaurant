@@ -1,0 +1,41 @@
+﻿@model WorldCuisinesRestaurants.Models.Order
+
+@{
+    ViewBag.Title = "SaveNewOrder";
+}
+
+<h3>Your Order :</h3>
+
+<h4>Order number:  @Model.OrderNumber</h4>
+
+<h4>Order Date:  @Model.Date</h4>
+
+<h4>Total Amount, CAD: @Model.TotalSum</h4>
+
+<h4>Restaurant Name: @ViewBag.Restaurant</h4>
+
+
+<div class="row" style="font-size: 20px">
+    @Html.ActionLink("Print as PDF", "PrintOrder", "ReservationPrint", new { orderNumber = @Model.OrderNumber,
+    date = @Model.Date, sum = @Model.TotalSum, restaurant = ViewBag.Restaurant}, null)
+
+</div>
+<div class="row col-lg-6" style="margin-top: 40px">
+
+    <a style="margin-right: 50px; width:400px" href="~/Dishes/ViewAllDishesByRestaurantID" class="btn btn-primary btn-lg"> CHOOSE ANOTHER DISH </a>
+</div>
+
+<div class="row col-lg-6" style="margin-top: 40px">
+    <a style="margin-right: 50px; width:400px" href="~/Restaurants/GetRestaurantsByCuisineType" class="btn btn-primary btn-lg"> CHOOSE ANOTHER RESTAURANT </a>
+</div>
+
+<div class="row col-lg-6" style="margin-top: 40px">
+    <a style="margin-right: 50px; width:400px" href="~/Cuisines/GetAllCuisines" class="btn btn-primary btn-lg"> CHOOSE ANOTHER CUISINE </a>
+
+</div>
+
+<div class="row col-lg-6" style="margin-top: 40px">
+    <a style="margin-right: 50px; width:400px" href="~/Home/Index" class="btn btn-primary btn-lg"> EXIT </a>
+
+</div>
+

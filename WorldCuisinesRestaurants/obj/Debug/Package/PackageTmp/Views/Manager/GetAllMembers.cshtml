@@ -1,0 +1,98 @@
+﻿@model IEnumerable<WorldCuisinesRestaurants.Models.User>
+
+
+
+@{
+    ViewBag.Title = "GetAllMembers";
+    int i = 0;
+    string [] backPath = ViewBag.BackPath;
+}
+
+@{ 
+    var user = null as WorldCuisinesRestaurants.Models.User;
+}
+
+<h2>List of All Members</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserRole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemberID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalAmountSpent)
+        </th>
+        <th>
+            @Html.DisplayName("Discount")
+        </th>
+
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalAmountSpent)
+            </td>
+            <td>
+                @ViewBag.Discount[i]
+            </td>
+
+            <td>
+
+                <form method="post" action="~/Manager/EditDiscount">
+                    <input type="hidden" name="id" value="@item.ID" />
+
+                    <button type="submit" class="btn btn-default"> Edit Discount </button>
+                </form>
+
+
+            </td>
+        </tr>
+
+        i++;
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Back", backPath[0], backPath[1])
+</p>

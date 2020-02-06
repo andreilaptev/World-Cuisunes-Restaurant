@@ -1,0 +1,12 @@
+﻿body {
+}
+div {
+    margin-top: 5px;
+    margin-right: 5px;
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    color: white;
+    margin-bottom: 1px;
+    onclick: color="red";
+}

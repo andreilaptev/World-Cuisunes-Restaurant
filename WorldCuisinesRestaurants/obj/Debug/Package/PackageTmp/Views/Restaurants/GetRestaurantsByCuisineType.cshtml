@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WorldCuisinesRestaurants.Models.Restaurant>
+
+@{
+    ViewBag.Title = "GetRestaurantsByCuisineType";
+}
+
+<h2>List of restaurants with @ViewBag.Cuisine cuisine</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RestaurantName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CuisineType)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RestaurantName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CuisineType)
+        </td>
+        <td>
+            <form method="post" action="~/Restaurants/RestaurantChosen">
+
+                <input type="hidden" name="restaurantID" value="@item.ID"/>
+
+                <button type="submit"> CHOOSE </button>
+
+            </form>
+         </td>
+
+    </tr>
+
+        
+    }
+
+</table>

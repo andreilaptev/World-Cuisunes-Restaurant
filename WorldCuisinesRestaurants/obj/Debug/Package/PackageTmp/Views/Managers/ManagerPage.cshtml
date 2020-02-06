@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Manager Page";
+}
+
+<h3>Manager Page</h3>
+
+<p> Please choose item you want to manage </p>
+
+<div>
+
+    @using (Html.BeginForm("GetAllMembers", "Manager", FormMethod.Post))
+    {
+        <input type="hidden" name="redirectFrom" value="ManagerPage" />
+        <p> Get all members list <button class="btn-primary" style="width:110px; margin-left: 100px;"> Get All Members </button> </p>
+    }
+
+    @using (Html.BeginForm("Index", "Dishes", FormMethod.Post))
+    {
+        <p> View and update dishes <button class="btn-primary" style="width:110px; margin-left: 100px;"> Dishes </button> </p>
+    }
+
+
+
+    @using (Html.BeginForm("Index", "Discounts", FormMethod.Post))
+    {
+        <input type="hidden" name="redirectFrom" value="ManagerPage" />
+        <p> View and update discounts  <button class="btn-primary " style="width:110px; margin-left: 58px;"> Discounts </button></p>
+    }
+
+    @using (Html.BeginForm("Index", "Promotions", FormMethod.Post))
+    {
+        <p> View and update promotions  <button class="btn-primary" style="width:110px; margin-left: 40px;"> Promotions </button></p>
+    }
+
+</div>
+

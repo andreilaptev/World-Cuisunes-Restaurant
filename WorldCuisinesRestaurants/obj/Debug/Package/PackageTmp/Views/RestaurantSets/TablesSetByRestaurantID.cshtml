@@ -1,0 +1,18 @@
+﻿<script src="~/Scripts/bootstrap.js"></script>
+@{
+    
+        ViewBag.Title = "Home Page";
+   
+    string cssFile = ViewBag.RestaurantName;
+
+}
+
+
+<h4>Tables Set  for Restaurant @ViewBag.RestaurantName</h4>
+
+<div>
+    @Html.Raw(ViewBag.HTML)
+</div>
+
+
+

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="WorldCuisinesRestaurantsDBContext-Web.config Connection String" description="WorldCuisinesRestaurantsDBContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=centennial.cvygq8xjlq2a.us-east-1.rds.amazonaws.com;Initial Catalog=WSRDB;User Id=admin;Password=bokken111;ConnectRetryCount=0" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Canada\\Centennial\\Semester_5\\Project\\FINAL\ RELEASE\\WorldCuisinesRestaurants_FINAL\\WorldCuisinesRestaurants\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='WorldCuisinesRestaurantsDBContext']/@connectionString" />
+  </parameter>
+</parameters>

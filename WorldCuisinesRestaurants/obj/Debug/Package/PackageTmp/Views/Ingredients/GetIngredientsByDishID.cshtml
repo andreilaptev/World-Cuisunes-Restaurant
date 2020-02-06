@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WorldCuisinesRestaurants.Models.Ingredient>
+
+
+@{
+    ViewBag.Title = "GetIngredientsByDishID";
+}
+
+@{
+    int i = 0;
+}
+
+<h2>Ingredients for </h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayName("Quantity")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Measure)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var m in Model)
+    {
+
+        <tr>
+            <td>
+                @Html.DisplayFor(mod => m.Name)
+            </td>
+            <td>
+                @ViewBag.Quantities[i]
+            </td>
+            <td>
+                @Html.DisplayFor(mod => m.Measure)
+            </td>
+
+        </tr>
+
+        i++;
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to Dishes", "Index", "Dishes")
+</div>

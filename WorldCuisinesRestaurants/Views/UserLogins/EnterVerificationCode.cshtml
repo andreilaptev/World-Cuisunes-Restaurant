@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "EnterVerificationCode";
+}
+
+<h4>Enter Verification Code Here</h4>
+
+@using (Html.BeginForm("CheckVerificationCode", "UserLogins", FormMethod.Post))
+{
+    <input type="text" name="Code" />
+
+    <input type="submit" name="Send" />
+
+
+}
+

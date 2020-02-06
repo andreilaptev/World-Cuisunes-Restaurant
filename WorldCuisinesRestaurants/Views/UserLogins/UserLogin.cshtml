@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "UserLogin";
+}
+
+<h3>Please fill fields below </h3>
+
+<div class="danger" style="color:red; font-size: 20px">
+    @ViewBag.UserNotFound
+
+</div>
+
+<div class="danger" style="color:red; font-size: 20px">
+    @ViewBag.IncorrectPassword
+
+</div>
+
+
+@using (Html.BeginForm("CheckUserLogin", "UserLogins", FormMethod.Post))
+{
+
+    <h4> Login </h4>
+    <div class="row"><input type="text" name="login" />     </div>
+
+    <h4> Password </h4>
+    <div class="row">
+        <input type="password" name="pass" />
+        @Html.ActionLink("Forgot your password?", "ForgottenPasswordRequest", "UserLogins")
+    </div>
+        <input type="submit" name="Send" />
+
+
+        }
+
+        <div>
+            @Html.ActionLink("Register", "Create", "UserLogins")
+        </div>
+

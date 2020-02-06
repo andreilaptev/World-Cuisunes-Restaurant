@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WorldCuisinesRestaurants.Models.Restaurant>
+
+@{
+    ViewBag.Title = "Restaurant List";
+}
+
+<h2>Restaurants List </h2>
+
+
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            <h5> Restaurant Name </h5> @Html.DisplayFor(modelItem => item.RestaurantName)
+
+
+            <h5>
+                Cuisine Type  @Html.DisplayFor(modelItem => item.CuisineType)
+            </h5> <form method="post" action="RestaurantChosen">
+     
+            <button type="submit" name="name" value="@item.RestaurantName" class="btn btn-default"> Choose </button>
+                    </form>
+        </td>
+       
+    </tr>
+    <br>
+}

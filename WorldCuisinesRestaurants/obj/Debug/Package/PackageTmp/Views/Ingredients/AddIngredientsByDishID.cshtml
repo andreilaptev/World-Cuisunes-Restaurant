@@ -1,0 +1,35 @@
+﻿
+@model WorldCuisinesRestaurants.Models.Ingredient
+
+
+@{
+    ViewBag.Title = "AddIngredientsByDishID";
+}
+
+<h4>Add Ingredient</h4>
+
+<div class="form-horizontal">
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <form method="post" action="~/Ingredients/AddIngredientToDish">
+                <p> Please choose ingredient <p>@Html.DropDownList("Name", ViewBag.Ingredients as SelectList, "Select ingredient")</p></p>
+
+                @Html.DisplayName("Quantity")<br/>
+                <input type="text" name="Quantity" value="" />
+
+                <button type="submit" value="" class="btn btn-default">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Create New Ingredient", "Create")
+</div>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
